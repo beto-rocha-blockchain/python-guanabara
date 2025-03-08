@@ -1,25 +1,31 @@
-import requests
-from bs4 import BeautifulSoup
+# Definindo a tupla com os 20 primeiros colocados do Campeonato Brasileiro
+brasileirao = (
+    "Palmeiras", "Grêmio", "Atlético-MG", "Flamengo", "Botafogo",
+    "Fluminense", "Bragantino", "São Paulo", "Internacional", "Fortaleza",
+    "Cuiabá", "Corinthians", "Cruzeiro", "Santos", "Vasco da Gama",
+    "Bahia", "Coritiba", "Goiás", "América-MG", "Chapecoense"
+)
 
-def obter_classificacao():
-    url = "https://ge.globo.com/futebol/brasileirao-serie-a/"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-    
-    times = []
-    for item in soup.select(".tabela__equipes .tabela__equipes-nome"):
-        times.append(item.get_text(strip=True))
-    
-    return tuple(times[:20])
+print('===================================================================================================')
 
-times_brasileirao = obter_classificacao()
+# A) Os 5 primeiros colocados
+top_5 = brasileirao[:5]
+print("Os 5 primeiros colocados são:", top_5)
 
-print("Os 5 primeiros colocados são:", times_brasileirao[:5])
-print("Os últimos 4 colocados são:", times_brasileirao[-4:])
-print("Times em ordem alfabética:", sorted(times_brasileirao))
+print('===================================================================================================')
 
-if "Chapecoense" in times_brasileirao:
-    posicao_chapecoense = times_brasileirao.index("Chapecoense") + 1
-    print(f"A Chapecoense está na {posicao_chapecoense}ª posição da tabela.")
-else:
-    print("A Chapecoense não está entre os 20 primeiros colocados.")
+# B) Os últimos 4 colocados da tabela
+bottom_4 = brasileirao[-4:]
+print("Os últimos 4 colocados são:", bottom_4)
+
+print('===================================================================================================')
+
+# C) Lista com os times em ordem alfabética
+sorted_teams = sorted(brasileirao)
+print("Times em ordem alfabética:", sorted_teams)
+
+print('===================================================================================================')
+
+# D) Posição da Chapecoense na tabela
+pos_chapecoense = brasileirao.index("Chapecoense") + 1
+print(f"A Chapecoense está na {pos_chapecoense}ª posição da tabela.")

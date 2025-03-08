@@ -1,6 +1,9 @@
 # Lendo 4 valores do usuário e armazenando em uma tupla
 valores = tuple(int(input(f"Digite o {i+1}º valor: ")) for i in range(4))
 
+# Valores digitados
+print('Você digitou os valores ', valores)
+
 # a) Quantas vezes apareceu o valor 9
 quantidade_nove = valores.count(9)
 print(f"O número 9 apareceu {quantidade_nove} vezes.")

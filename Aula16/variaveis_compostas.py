@@ -1,12 +1,12 @@
 # Código errado
 
-lanche = hamburguer
+lanche = 'hamburguer'
 
-lanche = suco
+lanche = 'suco'
 
-lanche = pizza
+lanche = 'pizza'
 
-lanche = pudim
+lanche = 'pudim'
 
 # Código correto (variáveis compostas por tuplas)
 
@@ -16,15 +16,17 @@ lanche = pudim
 # 2. Pizza
 # 3. Pudim
 
+lanche = ('hamburguer', 'suco', 'pizza', 'pudim')
+
 print(lanche[2]) # Pizza
 
 print(lanche[0:2]) # Hambúrguer e suco
 
-print(lanche[1:]) # Suco, pizza e hambúrguer
+print(lanche[1:]) # Suco, pizza e pudim
 
 print(lanche[-1]) # Pudim
 
-len(lanche) # 4
+len(lanche) # responde quantos valores existem na variável (4)
 
 for c in lanche:
     print(c)
