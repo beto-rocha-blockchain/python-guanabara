@@ -1,9 +1,9 @@
-# main.py
 import moeda
 
 preco = float(input("Digite o preço: R$ "))
 
-print(f"A metade de {moeda.moeda(preco)} é {moeda.moeda(moeda.metade(preco))}")
-print(f"O dobro de {moeda.moeda(preco)} é {moeda.moeda(moeda.dobro(preco))}")
-print(f"Aumentando 10%, temos {moeda.moeda(moeda.aumentar(preco, 10))}")
-print(f"Diminuindo 13%, temos {moeda.moeda(moeda.diminuir(preco, 13))}")
+print(f'Preço original: {moeda.moeda(preco)}')
+print(f'Dobro do preço: {moeda.dobro(preco, formatar=True)}')
+print(f'Metade do preço: {moeda.metade(preco, formatar=True)}')
+print(f'Aumentando 10%: {moeda.aumentar(preco, 10, formatar=True)}')
+print(f'Diminuindo 20%: {moeda.diminuir(preco, 20, formatar=True)}')

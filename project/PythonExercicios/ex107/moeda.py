@@ -1,17 +1,15 @@
-# moeda.py
+def aumentar(valor, porcentagem, formatar=False):
+    resultado = valor + (valor * porcentagem / 100)
+    return f'R${resultado:.2f}' if formatar else resultado
 
-def aumentar(valor, percentual):
-    """Aumenta o valor em uma determinada porcentagem."""
-    return valor + (valor * percentual / 100)
+def diminuir(valor, porcentagem, formatar=False):
+    resultado = valor - (valor * porcentagem / 100)
+    return f'R${resultado:.2f}' if formatar else resultado
 
-def diminuir(valor, percentual):
-    """Diminui o valor em uma determinada porcentagem."""
-    return valor - (valor * percentual / 100)
+def dobro(valor, formatar=False):
+    resultado = valor * 2
+    return f'R${resultado:.2f}' if formatar else resultado
 
-def dobro(valor):
-    """Retorna o dobro do valor."""
-    return valor * 2
-
-def metade(valor):
-    """Retorna a metade do valor."""
-    return valor / 2
+def metade(valor, formatar=False):
+    resultado = valor / 2
+    return f'R${resultado:.2f}' if formatar else resultado
